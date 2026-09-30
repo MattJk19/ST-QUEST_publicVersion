@@ -1,0 +1,110 @@
+//PROMPT CON DIAGRAMAS
+Generame un question_bank (con soporte del script Katex) de un minimo de 64 preguntas, con una biobloteca de driagramas respecto a los archivos que te estoy pasando siguiendo la estructura siguiente para descargar en un archivo ".js", y agrupa las preguntas en temas (7 u 9, o más) segun tu consideración respetando las estructuras dadas.
+
+// Para el archivo (nombredelamateria)diagrams.js
+
+/* =========================================================
+   BIBLIOTECA DE DIAGRAMAS PARA NUEVA MATERIA
+   ========================================================= */
+
+// 1. Funciones internas o específicas para dibujar tus diagramas
+function drawMiDiagrama(data = {}) {
+  // Aquí generas la lógica para tu SVG personalizado
+  const width = data.width || 400;
+  const height = data.height || 300;
+  
+  // Interacción opcional
+  const clickAttrs = data.clickId ? ` data-click-answer="${data.clickId}" class="clickable"` : '';
+  
+  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="100" height="100" fill="blue" ${clickAttrs} />
+      <text x="60" y="60" text-anchor="middle" fill="white">${data.texto || 'Hola'}</text>
+  </svg>`;
+}
+
+// 2. CONTRATO OBLIGATORIO CON EL MOTOR: EL DESPACHADOR
+// El motor siempre llamará a esta función pasándole el spec del Question Bank.
+function buildDiagramSVG(spec = {}) {
+  switch(spec.kind) {
+      case 'mi_tipo_diagrama': 
+          return drawMiDiagrama(spec.data || {});
+      // Agrega más "cases" según los tipos de diagramas de tu materia
+      default:
+          return "<p>Diagrama no reconocido.</p>";
+  }
+}
+
+//Para el archivo (nombredelamateria)questionbank.js
+
+// Diccionario de conceptos recurrentes (opcional)
+const CONCEPT_NOTES = {
+  "concepto_clave": "Definición detallada que el motor puede usar para mostrar ayudas o tooltips.",
+  "otro_termino": "Explicación del segundo término."
+};
+
+// Banco principal de preguntas
+const QUESTION_BANK = [
+  // 1. Pregunta clásica de Opción Múltiple (Choice)
+  {
+    id: 1,
+    topic: "introduccion_a_la_materia",
+    difficulty: 1,
+    type: "choice", // Se puede omitir, el motor asume "choice" por defecto
+    question: "¿Cuál es el concepto principal de este tema?",
+    options: ["Opción Incorrecta 1", "Opción Correcta", "Opción Incorrecta 2", "Opción Incorrecta 3"],
+    correct: 1, // Es el índice del arreglo 'options' (0-based)
+    explanation: "La opción 1 es correcta porque define exactamente el concepto."
+  },
+
+  // 2. Pregunta de Tipeo (Input)
+  {
+    id: 2,
+    topic: "introduccion_a_la_materia",
+    difficulty: 2,
+    type: "input",
+    question: "¿Cómo se llama el proceso de validar datos de entrada?",
+    options: [], // ESTRICTAMENTE VACÍO para preguntas de tipo input
+    correct: ["sanitizacion", "sanitización", "filtrado"], // Arreglo de strings en minúscula con respuestas aceptadas
+    explanation: "La sanitización es el proceso de limpieza y validación de los datos."
+  },
+
+  // 3. Pregunta con Gráfico de Soporte (Diagram)
+  {
+    id: 3,
+    topic: "diagramas_de_flujo",
+    difficulty: 3,
+    type: "diagram",
+    question: "Observando el diagrama superior, ¿cuál es el siguiente paso lógico?",
+    options: ["Paso A", "Paso B", "Paso C"],
+    correct: 2, // Sigue resolviéndose como un "choice" tradicional
+    explanation: "El Paso C es el correcto según la especificación técnica.",
+    diagram: {
+      // Objeto de configuración que leerá tu función buildDiagramSVG()
+      shape: "flowchart",
+      elements: ["Inicio", "Proceso", "Fin"],
+      connections: ["Inicio->Proceso", "Proceso->Fin"]
+    }
+  },
+
+  // 4. Pregunta Interactiva sobre Gráfico (Diagram-click)
+  {
+    id: 4,
+    topic: "arquitectura",
+    difficulty: 4,
+    type: "diagram-click",
+    question: "Hacé clic en el nodo central que distribuye la carga.",
+    options: [], // ESTRICTAMENTE VACÍO para interacciones de clic
+    correct: "load_balancer_node_id", // String que debe coincidir con el data-click-answer del SVG
+    explanation: "El balanceador de carga es el nodo que distribuye el tráfico.",
+    diagram: {
+      // Objeto de configuración para armar el gráfico interactivo
+      shape: "network_map",
+      interactive: true,
+      nodes: [
+        { id: "server_1", label: "Server A" },
+        { id: "load_balancer_node_id", label: "Balanceador" }
+      ]
+    }
+  }
+];
+

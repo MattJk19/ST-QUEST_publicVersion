@@ -1,0 +1,457 @@
+
+La historia quedaría así.
+
+# ST QUEST — CRÓNICA DEL SABER
+
+## Prólogo
+
+### Pantalla inicial
+
+**Título:**
+
+> **La Crónica del Saber**
+
+**Texto:**
+
+> Durante mucho tiempo, el conocimiento de **{MATERIA}** permaneció intacto.
+>
+> Generación tras generación, quienes se adentraban en sus tierras aprendían de sus leyes, sus conceptos y sus secretos.
+>
+> Pero algo ocurrió.
+>
+> Una fuerza desconocida comenzó a corromper el conocimiento.
+>
+> Las tierras cambiaron.
+>
+> Aquello que alguna vez fue comprendido comenzó a ser olvidado.
+>
+> Los antiguos Guardianes, encargados de proteger cada región del saber, quedaron atrapados dentro de sus propios dominios.
+>
+> Desde entonces, las tierras permanecen aisladas.
+>
+> Nadie ha conseguido restaurarlas.
+>
+> Hasta ahora.
+
+Pausa.
+
+> **Vos has sido llamado.**
+>
+> No para destruir el conocimiento.
+>
+> Sino para demostrar que todavía sos capaz de comprenderlo.
+>
+> Atravesá las tierras de **{MATERIA}**.
+>
+> Enfrentá a sus criaturas.
+>
+> Recuperá el conocimiento perdido.
+>
+> Derrotá a los Guardianes.
+>
+> Y llegá hasta el origen de la corrupción.
+>
+> **Tu viaje comienza ahora.**
+
+---
+
+# CAPÍTULO I — EL DESPERTAR
+
+El jugador aparece en la primera zona.
+
+El **Guardián de la zona inicial** es la primera voz que escucha.
+
+### Primer diálogo
+
+> **Guardián:**
+>
+> "Así que finalmente has llegado."
+>
+> "Bienvenido a las tierras de **{MATERIA}**."
+>
+> "Hace mucho tiempo, estos lugares estaban llenos de aprendices."
+>
+> "Venían buscando respuestas."
+>
+> "Pero con el tiempo comenzaron a olvidar lo que habían aprendido."
+>
+> "Y cuando el conocimiento empezó a desaparecer..."
+>
+> "las criaturas comenzaron a ocupar su lugar."
+
+Pausa.
+
+> "No te voy a decir qué tenés que saber."
+>
+> "Eso tendrás que descubrirlo por vos mismo."
+>
+> "Explorá."
+>
+> "Aprendé."
+>
+> "Y demostrá que podés avanzar."
+
+### Primera misión
+
+> **PRIMERA PRUEBA**
+>
+> Las criaturas de estas tierras todavía conservan fragmentos del conocimiento perdido.
+>
+> Enfrentalas.
+>
+> Aprendé de cada encuentro.
+>
+> Acumulá experiencia.
+>
+> Y encontrá al Guardián que protege esta región.
+
+Esto encaja directamente con el sistema que ya tenés de enemigos, preguntas, XP y jefe.
+
+No hace falta cambiar absolutamente nada de los enemigos.
+
+---
+
+# PRIMER GUARDIÁN
+
+Cuando el jugador llega al jefe:
+
+> **Guardián:**
+>
+> "Has llegado hasta mí."
+>
+> "Muchos recorren estas tierras."
+>
+> "Muy pocos llegan hasta este lugar."
+>
+> "Pero llegar no significa comprender."
+>
+> "Para continuar tu viaje tendrás que demostrar lo que aprendiste."
+>
+> **"Comencemos."**
+
+Y empieza el combate normal.
+
+---
+
+# DERROTA DEL PRIMER GUARDIÁN
+
+> **Guardián:**
+>
+> "..."
+>
+> "Has vencido."
+>
+> "No esperaba que llegaras tan lejos."
+>
+> "Pero ahora entendés algo que los demás nunca comprendieron."
+>
+> "Cada tierra que recorras será más difícil que la anterior."
+>
+> "Y cada respuesta equivocada puede llevarte un poco más cerca del olvido."
+
+Pausa.
+
+> "El camino que sigue ya está abierto."
+>
+> "Avanzá."
+>
+> "Y no olvides lo que aprendiste aquí."
+
+El portal queda disponible.
+
+---
+
+# CAPÍTULO II — LAS TIERRAS DESCONOCIDAS
+
+Cuando entra a la segunda zona:
+
+> **Guardián:**
+>
+> "Has llegado a una nueva tierra."
+>
+> "Ya no sos el mismo aprendiz que comenzó este viaje."
+>
+> "Pero tampoco sos todavía aquello que necesitás ser."
+>
+> "Aquí el conocimiento es más profundo."
+>
+> "Las criaturas que habitan estas tierras no te van a dejar avanzar fácilmente."
+>
+> "No luches contra ellas solamente por sobrevivir."
+>
+> "Cada encuentro tiene algo que enseñarte."
+
+### Mensaje de misión
+
+> **SEGUNDA PRUEBA**
+>
+> Explorá la región.
+>
+> Enfrentá a sus criaturas.
+>
+> Recuperá experiencia.
+>
+> Encontrá al siguiente Guardián.
+
+---
+
+# SEGUNDO GUARDIÁN
+
+> **Guardián:**
+>
+> "Volviste."
+>
+> "Eso significa que la primera prueba no te detuvo."
+>
+> "Pero esta tierra guarda conocimientos que no se pueden aprender simplemente memorizando."
+>
+> "Tendrás que comprenderlos."
+>
+> "Y ahora voy a descubrir cuánto has progresado."
+
+Combate.
+
+### Al derrotarlo:
+
+> "Lo has comprendido."
+>
+> "Podés continuar."
+>
+> "Pero todavía quedan otras tierras."
+>
+> "Y cada Guardián que encuentres será más difícil de superar."
+>
+> "Seguí avanzando."
+
+---
+
+# CAPÍTULO III — EL CONOCIMIENTO PERDIDO
+
+En la tercera zona:
+
+> "Hasta ahora has estado aprendiendo."
+>
+> "A partir de este momento tendrás que recordar."
+>
+> "El conocimiento de **{MATERIA}** no está dividido en caminos separados."
+>
+> "Todo está conectado."
+>
+> "Lo que aprendiste antes volverá a aparecer."
+>
+> "Tal vez de una forma diferente."
+>
+> "Tal vez en un lugar que no esperabas."
+>
+> "No confíes solamente en lo que ya conocés."
+>
+> "Comprendé cómo se relaciona."
+
+### Misión
+
+> **TERCERA PRUEBA**
+>
+> Atravesá la región.
+>
+> Superá sus desafíos.
+>
+> Recuperá el conocimiento perdido.
+>
+> Y enfrentá al Guardián de estas tierras.
+
+---
+
+# TERCER GUARDIÁN
+
+> "Has llegado hasta aquí."
+>
+> "Eso significa que no solamente respondiste preguntas."
+>
+> "Comenzaste a entender."
+>
+> "Pero todavía no es suficiente."
+>
+> "El verdadero conocimiento aparece cuando lo que aprendiste puede enfrentarse a algo nuevo."
+>
+> "Veamos si realmente estás preparado."
+
+Combate.
+
+### Al derrotarlo:
+
+> "Ahora lo veo."
+>
+> "El conocimiento todavía existe."
+>
+> "No estaba perdido."
+>
+> "Solamente esperaba a alguien capaz de recuperarlo."
+>
+> "La siguiente región ya te espera."
+
+---
+
+# CAPÍTULO IV — LA FORTALEZA
+
+Acá la historia cambia un poco de tono.
+
+Ya no sos un principiante.
+
+> "Has atravesado tres tierras."
+>
+> "Muchos se detienen antes de llegar hasta acá."
+>
+> "Las últimas regiones ya no ponen a prueba solamente lo que sabés."
+>
+> "Ponen a prueba cuánto podés aplicar."
+>
+> "Acá no vas a encontrar respuestas fáciles."
+>
+> "Si llegaste hasta estas puertas..."
+>
+> "es porque ya no sos solamente un aprendiz."
+
+### Misión
+
+> **LA PRUEBA DEL GUARDIÁN**
+>
+> La última región antes del corazón del reino está cerrada.
+>
+> Derrotá a su Guardián.
+>
+> Solo entonces podrás acceder al Castillo.
+
+---
+
+# CUARTO GUARDIÁN
+
+> "Te estaba esperando."
+>
+> "Has recorrido un largo camino."
+>
+> "Has aprendido."
+>
+> "Has fallado."
+>
+> "Has vuelto a intentarlo."
+>
+> "Y todavía seguís acá."
+>
+> "Eso es lo que distingue a quien aprende de quien simplemente memoriza."
+>
+> "Pero antes de entrar al Castillo..."
+>
+> **"Deberás demostrarlo una última vez."**
+
+Combate.
+
+### Al derrotarlo:
+
+> "Ya no tengo nada más que enseñarte."
+>
+> "El camino hacia el Castillo está abierto."
+>
+> "Pero allí no encontrarás otro maestro."
+>
+> "Encontrarás la causa de todo esto."
+
+---
+
+## Capítulo V — El Castillo
+
+Al entrar:
+
+> "Has llegado al Castillo."
+>
+> "Todo lo que aprendiste te condujo hasta este lugar."
+>
+> "Los Guardianes anteriores han sido derrotados, pero todavía queda uno."
+>
+> "El más poderoso de todos."
+>
+> "No hay otro portal."
+>
+> "No existe otro camino."
+>
+> "Tu última prueba está en algún lugar de este Castillo."
+>
+> **"Encontralo."**
+
+El jugador entonces recorre normalmente el Castillo, combate sus enemigos y finalmente encuentra al **Dragón**, que ya existe como jefe de esta zona. 
+
+### Encuentro con el Dragón
+
+> **Dragón:**
+>
+> "Así que vos sos quien derrotó a los Guardianes."
+>
+> "Atravesaste cada una de las tierras."
+>
+> "Sobreviviste a cada prueba."
+>
+> "Y ahora venís por mí."
+>
+> "Pero no confundas haber llegado hasta aquí con haber terminado tu viaje."
+>
+> "Todo lo que aprendiste..."
+>
+> "todo lo que recordás..."
+>
+> "será puesto a prueba ahora."
+>
+> **"Demostrame que sos digno de completar la Crónica."**
+
+**→ COMBATE FINAL**
+
+Cuando lo derrotás, ocurre el final principal que escribimos antes:
+
+> "..."
+>
+> "Entonces era cierto."
+>
+> "Todavía existe."
+>
+> "El conocimiento no había desaparecido."
+>
+> **"Vos lo recuperaste."**
+
+Y ahí aparece **La Crónica de {MATERIA} ha sido completada**.
+
+---
+
+## La terminal — contenido posterior
+
+Y ahora sí la terminal adquiere una función narrativa bastante buena.
+
+Durante toda la campaña puede estar en el Castillo, pero bloqueada.
+
+Antes de completar todos los jefes:
+
+> **TERMINAL DE LOS GUARDIANES**
+>
+> `ACCESO DENEGADO`
+>
+> Los registros de combate permanecen sellados.
+>
+> Para acceder al Archivo de los Guardianes deberás derrotar a todos los Guardianes del reino.
+
+Después de derrotar al Dragón:
+
+> **TERMINAL DE LOS GUARDIANES**
+>
+> `ACCESO AUTORIZADO`
+>
+> Todos los Guardianes han sido registrados.
+>
+> Los combates almacenados pueden ser reconstruidos.
+>
+> Desde este terminal podrás volver a enfrentarte a los Guardianes derrotados y crear nuevas pruebas de combate.
+>
+> **La Crónica terminó. Tu entrenamiento no.**
+
+
+**Campaña:** llegar al Castillo → derrotar al Dragón → completar la Crónica.
+
+**Post-game:** terminal → revancha contra jefes → combates personalizados → seguir estudiando/subiendo nivel/equipándote.
+
+Y no necesitamos tocar la lógica fundamental de tu interfaz para justificarlo.

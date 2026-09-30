@@ -1,0 +1,517 @@
+/* =========================================================
+   BANCO DE PREGUNTAS: Álgebra Lineal ("algquestions.js")
+   Materia: Álgebra Lineal (alg1)
+   Persona: Arquitecto de Contenido Educativo STEM
+   Fuentes: Grossman (7ma Ed), PROMiDAT, TP Cuádricas.
+   ========================================================= */
+
+const SUBJECT_INFO = {
+  id: 'alg1',
+  name: 'Álgebra Lineal',
+  shortName: 'Alg. Lineal'
+};
+
+const QUESTION_BANK = [
+  // BLOQUE 1: Sistemas de Ecuaciones Lineales (1-7) - Grossman 1.1 y 1.2
+  {
+    "id": 1,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 2,
+    "question": "¿Bajo qué condición un sistema de dos ecuaciones lineales con dos incógnitas tiene una solución única?",
+    "options": [
+      "Si a11a22 - a12a21 ≠ 0",
+      "Si las rectas son paralelas y distintas",
+      "Si a11a22 - a12a21 = 0",
+      "Si las pendientes de ambas rectas son iguales"
+    ],
+    "correct": 0,
+    "explanation": "Según el Teorema de Resumen 1.1.1 de Grossman, un sistema de 2x2 tiene solución única si y solo si el determinante del sistema (a11a22 - a12a21) es distinto de cero."
+  },
+  {
+    "id": 2,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 1,
+    "question": "¿Qué representa un sistema de ecuaciones 'inconsistente' según la geometría analítica?",
+    "options": [
+      "Un par de rectas que se intersecan en el origen",
+      "Un par de rectas coincidentes",
+      "Un par de rectas paralelas y distintas",
+      "Un sistema con infinitas soluciones"
+    ],
+    "correct": 2,
+    "explanation": "Como se describe en la Figura 1.2 de Grossman, un sistema es inconsistente cuando no tiene puntos de intersección, lo cual corresponde a rectas paralelas y distintas."
+  },
+  {
+    "id": 3,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 2,
+    "question": "¿Cuál de las siguientes operaciones elementales por renglones NO altera el conjunto de soluciones de un sistema?",
+    "options": [
+      "Sumar una constante distinta de cero a todos los elementos de un renglón",
+      "Multiplicar un renglón por una constante c ≠ 0 (Ri → cRi)",
+      "Intercambiar un renglón por una columna",
+      "Elevar al cuadrado los elementos de un renglón"
+    ],
+    "correct": 1,
+    "explanation": "La sección 1.2 de Grossman define las tres operaciones elementales que preservan la equivalencia del sistema, incluyendo Ri → cRi para c ≠ 0."
+  },
+  {
+    "id": 4,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 3,
+    "question": "En el método de eliminación de Gauss-Jordan, ¿cuál es el objetivo de la reducción por renglones?",
+    "options": [
+      "Obtener una matriz cuya diagonal sea cero",
+      "Llevar la matriz aumentada a una forma donde las soluciones se identifiquen de inmediato",
+      "Convertir la matriz de coeficientes en una matriz nula",
+      "Intercambiar todas las filas por las columnas"
+    ],
+    "correct": 1,
+    "explanation": "El Ejemplo 1.2.1 de Grossman ilustra cómo se aplican operaciones elementales hasta obtener un sistema equivalente cuya solución es evidente, usualmente en forma escalonada reducida."
+  },
+  {
+    "id": 5,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 2,
+    "question": "¿Qué indica el símbolo Ri ↔ Rj en la notación de matrices de Grossman?",
+    "options": [
+      "Que el renglón i se multiplica por el renglón j",
+      "Que los renglones i y j se intercambian",
+      "Que el renglón i se suma al renglón j",
+      "Que la matriz es inconsistente"
+    ],
+    "correct": 1,
+    "explanation": "Basado en la notación de la sección 1.2 de Grossman, Ri ↔ Rj representa la tercera operación elemental por renglón: el intercambio de filas."
+  },
+  {
+    "id": 6,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 2,
+    "question": "Si en un sistema de 2x2 se cumple que a11a22 - a12a21 = 0, ¿cuál es la conclusión necesaria sobre sus soluciones?",
+    "options": [
+      "Tiene solución única",
+      "Es un sistema homogéneo",
+      "No tiene solución o tiene infinitas soluciones",
+      "Siempre tiene la solución trivial (0,0)"
+    ],
+    "correct": 2,
+    "explanation": "De acuerdo con el Teorema de Resumen 1.1.1 (Punto de vista 1), si el determinante es cero, las rectas son paralelas, lo que implica que no hay intersección o las rectas coinciden."
+  },
+  {
+    "id": 7,
+    "topic": "Sistemas de Ecuaciones Lineales",
+    "themeId": 1,
+    "difficulty": 1,
+    "question": "¿Cómo se define la matriz aumentada de un sistema de ecuaciones?",
+    "options": [
+      "Es la matriz que contiene solo los términos independientes",
+      "Es un arreglo que incluye tanto los coeficientes de las variables como las constantes del sistema",
+      "Es el resultado de multiplicar la matriz de coeficientes por su inversa",
+      "Es una matriz cuadrada de n x n siempre"
+    ],
+    "correct": 1,
+    "explanation": "La sección 1.2 (Ecuación 1.2.8) de Grossman define la matriz aumentada como la representación compacta del sistema para aplicar reducción por renglones."
+  },
+
+  // BLOQUE 2: Vectores y Matrices (8-13) - Grossman 2.1 a 2.6
+  {
+    "id": 8,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 2,
+    "question": "¿Cuál es la condición necesaria para realizar el producto matricial AB?",
+    "options": [
+      "A y B deben ser del mismo tamaño",
+      "El número de renglones de A debe ser igual al de columnas de B",
+      "El número de columnas de A debe ser igual al número de renglones de B",
+      "Ambas matrices deben ser cuadradas"
+    ],
+    "correct": 2,
+    "explanation": "Según la sección 2.2 de Grossman, si A es m x n, B debe tener n renglones para que el producto esté definido."
+  },
+  {
+    "id": 9,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 3,
+    "question": "¿Qué propiedad define a la inversa de una matriz cuadrada A?",
+    "options": [
+      "A multiplicada por su transpuesta es la identidad",
+      "A multiplicada por su inversa resulta en la identidad (A * A^-1 = I)",
+      "El determinante de la matriz debe ser cero",
+      "La matriz debe ser triangular superior únicamente"
+    ],
+    "correct": 1,
+    "explanation": "La sección 2.4 de Grossman establece que una matriz cuadrada es invertible si existe A^-1 tal que el producto resulta en la matriz identidad I."
+  },
+  {
+    "id": 10,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 2,
+    "question": "¿Cómo se obtiene la transpuesta de una matriz A?",
+    "options": [
+      "Multiplicando todos sus elementos por -1",
+      "Intercambiando sus renglones por sus columnas",
+      "Calculando el recíproco de cada elemento",
+      "Haciendo cero todos los elementos fuera de la diagonal"
+    ],
+    "correct": 1,
+    "explanation": "La sección 2.5 de Grossman define la transpuesta (A^T) como el arreglo obtenido al escribir los renglones de A como columnas."
+  },
+  {
+    "id": 11,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 3,
+    "question": "¿Qué caracteriza a una matriz elemental según la sección 2.6 de Grossman?",
+    "options": [
+      "Es una matriz que solo contiene ceros y unos",
+      "Es una matriz obtenida al aplicar una sola operación elemental por renglón a la matriz identidad",
+      "Es la matriz de coeficientes de cualquier sistema inconsistente",
+      "Es una matriz que no posee inversa"
+    ],
+    "correct": 1,
+    "explanation": "Grossman define las matrices elementales como aquellas que resultan de una sola operación elemental sobre I. Son siempre cuadradas e invertibles, propiedad clave para la teoría de matrices inversas."
+  },
+  {
+    "id": 12,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 2,
+    "question": "En el contexto de matrices cuadradas, ¿qué significa que una matriz sea simétrica?",
+    "options": [
+      "Que es igual a su inversa",
+      "Que es igual a su transpuesta (A = A^T)",
+      "Que todos sus elementos son iguales a 1",
+      "Que su determinante es exactamente 1"
+    ],
+    "correct": 1,
+    "explanation": "La sección 2.5 describe la simetría como la propiedad donde A coincide con su transpuesta, lo cual requiere que sea una matriz cuadrada."
+  },
+  {
+    "id": 13,
+    "topic": "Vectores y Matrices",
+    "themeId": 2,
+    "difficulty": 4,
+    "question": "Si una matriz A es invertible, ¿qué se puede afirmar sobre la solución del sistema Ax = b?",
+    "options": [
+      "Tiene infinitas soluciones para cualquier b",
+      "Tiene una solución única dada por x = A^-1 * b",
+      "No tiene solución si b ≠ 0",
+      "Es un sistema inconsistente por definición"
+    ],
+    "correct": 1,
+    "explanation": "Basado en la sección 2.4, la invertibilidad de A garantiza que el sistema posee una solución única, hallada mediante la premultiplicación por la inversa."
+  },
+
+  // BLOQUE 3: Determinantes (14-18) - Grossman 3.1 a 3.3
+  {
+    "id": 14,
+    "topic": "Determinantes",
+    "themeId": 3,
+    "difficulty": 3,
+    "question": "¿Cuál es el valor del determinante de un producto de matrices cuadradas AB?",
+    "options": [
+      "det A + det B",
+      "det A * det B",
+      "det A / det B",
+      "(det A)^2"
+    ],
+    "correct": 1,
+    "explanation": "El Teorema fundamental de la sección 3.5 establece que det AB = det A det B. La demostración completa utiliza matrices elementales para descomponer matrices invertibles, como se detalla en Grossman."
+  },
+  {
+    "id": 15,
+    "topic": "Determinantes",
+    "themeId": 3,
+    "difficulty": 2,
+    "question": "Si una matriz cuadrada tiene un renglón (o columna) compuesto totalmente por ceros, ¿cuál es su determinante?",
+    "options": [
+      "1",
+      "Depende de la suma de la diagonal",
+      "0",
+      "No se puede calcular"
+    ],
+    "correct": 2,
+    "explanation": "Según las propiedades de los determinantes en la sección 3.2 de Grossman, la presencia de una línea de ceros anula el valor del determinante."
+  },
+  {
+    "id": 16,
+    "topic": "Determinantes",
+    "themeId": 3,
+    "difficulty": 3,
+    "question": "¿Bajo qué condición principal se aplica la Regla de Cramer para resolver un sistema de n x n?",
+    "options": [
+      "Siempre que el sistema sea homogéneo",
+      "Solo cuando el determinante de la matriz de coeficientes es diferente de cero",
+      "Cuando el sistema tiene más incógnitas que ecuaciones",
+      "Cuando la matriz es singular"
+    ],
+    "correct": 1,
+    "explanation": "La sección 3.4 de Grossman explica que la Regla de Cramer requiere det A ≠ 0. Aunque es conceptualmente importante, es computacionalmente ineficiente frente a la eliminación gaussiana."
+  },
+  {
+    "id": 17,
+    "topic": "Determinantes",
+    "themeId": 3,
+    "difficulty": 2,
+    "question": "¿Cómo se relaciona el determinante de A con el de su transpuesta A^T?",
+    "options": [
+      "det(A) = -det(A^T)",
+      "det(A) = det(A^T)",
+      "det(A) = 1 / det(A^T)",
+      "Son independientes entre sí"
+    ],
+    "correct": 1,
+    "explanation": "En la sección 3.2 de Grossman se demuestra que el determinante no varía al transponer la matriz: det A = det A^T."
+  },
+  {
+    "id": 18,
+    "topic": "Determinantes",
+    "themeId": 3,
+    "difficulty": 4,
+    "question": "Según el Teorema de Resumen del Capítulo 3, ¿cuál es la condición necesaria y suficiente para que A sea invertible?",
+    "options": [
+      "det A = 0",
+      "A debe ser una matriz rectangular",
+      "det A ≠ 0",
+      "A debe ser una matriz elemental"
+    ],
+    "correct": 2,
+    "explanation": "La sección 3.3 de Grossman (Teorema de Resumen) vincula la existencia de la inversa directamente con un determinante distinto de cero."
+  },
+
+  // BLOQUE 4: Espacios Vectoriales (19-23) - Grossman 5.1 a 5.5
+  {
+    "id": 19,
+    "topic": "Espacios Vectoriales",
+    "themeId": 4,
+    "difficulty": 3,
+    "question": "¿Qué condiciones debe cumplir un subconjunto W para ser considerado un subespacio de un espacio vectorial V?",
+    "options": [
+      "Debe contener solo vectores de norma unitaria",
+      "Debe ser cerrado bajo la suma de vectores y la multiplicación por un escalar",
+      "Debe tener una dimensión estrictamente mayor que V",
+      "Debe ser un conjunto finito de vectores"
+    ],
+    "correct": 1,
+    "explanation": "La sección 5.2 de Grossman define un subespacio como un subconjunto que hereda la estructura de espacio vectorial al cumplir con las propiedades de cerradura."
+  },
+  {
+    "id": 20,
+    "topic": "Espacios Vectoriales",
+    "themeId": 4,
+    "difficulty": 3,
+    "question": "¿Cuándo se define un conjunto de vectores como linealmente independiente?",
+    "options": [
+      "Si al menos un vector es combinación lineal de los demás",
+      "Si la única combinación lineal que resulta en el vector nulo tiene todos los coeficientes nulos (ci = 0)",
+      "Si todos los vectores son paralelos al eje x",
+      "Si el número de vectores coincide con el rango de la matriz"
+    ],
+    "correct": 1,
+    "explanation": "La independencia lineal, según la sección 5.4 de Grossman, garantiza que ningún vector del conjunto pueda ser generado por los otros."
+  },
+  {
+    "id": 21,
+    "topic": "Espacios Vectoriales",
+    "themeId": 4,
+    "difficulty": 2,
+    "question": "¿Cómo se define la dimensión de un espacio vectorial V?",
+    "options": [
+      "Como el número de renglones de su matriz aumentada",
+      "Como el número de vectores presentes en cualquier base de V",
+      "Como la suma de los elementos de su vector principal",
+      "Como el valor absoluto de su determinante"
+    ],
+    "correct": 1,
+    "explanation": "La dimensión es una propiedad intrínseca definida en la sección 5.5 de Grossman como la cardinalidad de sus bases."
+  },
+  {
+    "id": 22,
+    "topic": "Espacios Vectoriales",
+    "themeId": 4,
+    "difficulty": 3,
+    "question": "¿Qué requisitos debe cumplir un conjunto de vectores para constituir una base de V?",
+    "options": [
+      "Deben ser ortogonales y de longitud 1",
+      "Deben ser linealmente independientes y generar el espacio V",
+      "Deben formar una matriz con determinante nulo",
+      "Deben incluir siempre al vector cero del espacio"
+    ],
+    "correct": 1,
+    "explanation": "Según la sección 5.5 de Grossman, una base es el conjunto mínimo de vectores que permite representar a cualquier otro vector del espacio."
+  },
+  {
+    "id": 23,
+    "topic": "Espacios Vectoriales",
+    "themeId": 4,
+    "difficulty": 2,
+    "question": "En la definición de espacio vectorial, ¿qué garantiza el axioma u + v = v + u?",
+    "options": [
+      "La cerradura bajo la suma",
+      "La propiedad conmutativa de la suma de vectores",
+      "La existencia de un elemento neutro",
+      "La propiedad distributiva escalar"
+    ],
+    "correct": 1,
+    "explanation": "La conmutatividad es uno de los 10 axiomas fundamentales descritos en la sección 5.1 de Grossman para los espacios vectoriales."
+  },
+
+  // BLOQUE 5: Transformaciones Lineales y Valores Propios (24-28) - Grossman 7 y 8
+  {
+    "id": 24,
+    "topic": "Transformaciones Lineales",
+    "themeId": 5,
+    "difficulty": 3,
+    "question": "¿Qué condiciones definen matemáticamente a una transformación lineal T?",
+    "options": [
+      "T(u+v) = T(u) + T(v) y T(αv) = αT(v)",
+      "T(x) = x^n donde n es un número entero",
+      "Que el determinante de la matriz asociada sea siempre unitario",
+      "T(0) = b donde b es un vector no nulo"
+    ],
+    "correct": 0,
+    "explanation": "La sección 7.1 de Grossman especifica que la linealidad requiere la preservación de la suma y el producto por escalar."
+  },
+  {
+    "id": 25,
+    "topic": "Transformaciones Lineales",
+    "themeId": 5,
+    "difficulty": 3,
+    "question": "¿Qué define al núcleo (o kernel) de una transformación lineal T: V → W?",
+    "options": [
+      "El conjunto de vectores en el dominio V tales que T(v) = 0",
+      "El conjunto de todas las imágenes posibles en el codominio W",
+      "La matriz identidad de tamaño n x n",
+      "El vector con mayor magnitud en el dominio"
+    ],
+    "correct": 0,
+    "explanation": "De acuerdo con la sección 7.2 de Grossman, el núcleo agrupa a todos los vectores del Dominio que mapean al vector nulo del Codominio."
+  },
+  {
+    "id": 26,
+    "topic": "Valores Propios",
+    "themeId": 6,
+    "difficulty": 5,
+    "question": "Para que una matriz cuadrada A sea diagonalizable, ¿qué relación conceptual debe existir con sus valores propios?",
+    "options": [
+      "Debe poseer n valores propios distintos cuyas raíces sean reales",
+      "Debe tener suficientes vectores propios linealmente independientes para formar una base",
+      "Todos sus valores propios λ deben ser iguales a cero",
+      "La suma de sus valores propios debe ser igual al determinante de A"
+    ],
+    "correct": 1,
+    "explanation": "En la sección 8.3, Grossman explica que la diagonalización depende de la existencia de n vectores propios linealmente independientes. Esto requiere resolver primero la ecuación característica det(A - λI) = 0 (Sección 8.1)."
+  },
+  {
+    "id": 27,
+    "topic": "Valores Propios",
+    "themeId": 6,
+    "difficulty": 5,
+    "question": "Sea λ un valor propio de A. ¿Cómo se caracteriza el espacio de vectores propios (autoespacio) asociado a λ?",
+    "options": [
+      "Como el conjunto de vectores v tales que Av = 0",
+      "Como el núcleo de la matriz (A - λI)",
+      "Como la transpuesta de la matriz de coeficientes",
+      "Como el conjunto de vectores cuya norma es λ"
+    ],
+    "correct": 1,
+    "explanation": "Según la sección 8.1 de Grossman, el vector característico no nulo satisface (A - λI)v = 0, lo que conceptualmente lo sitúa en el núcleo de dicha matriz."
+  },
+  {
+    "id": 28,
+    "topic": "Transformaciones Lineales",
+    "themeId": 5,
+    "difficulty": 3,
+    "question": "Geométricamente, ¿qué operación en R2 representa la transformación lineal cuya matriz estándar es [[1, 0], [0, -1]]?",
+    "options": [
+      "Una expansión horizontal",
+      "Una reflexión respecto al eje x",
+      "Una rotación de 90 grados",
+      "Un corte vertical"
+    ],
+    "correct": 1,
+    "explanation": "La sección 7.3 de Grossman analiza las representaciones matriciales de transformaciones geométricas, identificando esta matriz específica con la reflexión sobre el eje x."
+  },
+
+  // BLOQUE 6: Geometría y Aplicaciones (29-30) - TP Cuádricas y PROMiDAT
+  {
+    "id": 29,
+    "topic": "Geometría y Aplicaciones",
+    "themeId": 7,
+    "difficulty": 2,
+    "question": "¿Qué superficie cuádrica se identifica con la ecuación x^2/4 - y^2/1 - z^2/9 = 1?",
+    "options": [
+      "Un elipsoide",
+      "Un hiperboloide de dos hojas",
+      "Un paraboloide circular",
+      "Un hiperboloide de una hoja"
+    ],
+    "correct": 1,
+    "explanation": "Basado en el 'Trabajo Práctico - Cuádricas' (ejercicio 1.e), la presencia de dos signos negativos en los términos cuadráticos de una ecuación igualada a 1 identifica un hiperboloide de dos hojas."
+  },
+  {
+    "id": 30,
+    "topic": "Geometría y Aplicaciones",
+    "themeId": 7,
+    "difficulty": 3,
+    "question": "En Ciencia de Datos, ¿cuál es la aplicación principal del cálculo de valores y vectores propios?",
+    "options": [
+      "Redes Neuronales Convolucionales para visión",
+      "Análisis de Componentes Principales (PCA) para reducción de dimensionalidad",
+      "Regresión No Lineal para predicción de series",
+      "Sistemas de archivos distribuidos"
+    ],
+    "correct": 1,
+    "explanation": "Según la fuente PROMiDAT (ME-3000), el álgebra lineal sustenta el PCA, técnica que utiliza la descomposición de valores propios para identificar las direcciones de máxima varianza en los datos."
+  }
+];
+
+const CONCEPT_NOTES = {
+  'Relación': {
+    label: 'Relación',
+    meanings: [
+      { 
+        topic: 'Bases de Datos', 
+        text: 'Estructura organizada en tablas con tuplas y atributos (Modelo Relacional).' 
+      },
+      { 
+        topic: 'Álgebra Lineal', 
+        text: 'Vínculo matemático entre variables, usualmente definido por una función o transformación entre espacios.' 
+      }
+    ],
+    tip: 'No confunda la "tabla" informática con la "transformación" o dependencia lógica entre vectores.'
+  },
+  'Dimensión': {
+    label: 'Dimensión',
+    meanings: [
+      { 
+        topic: 'Espacios Vectoriales', 
+        text: 'Propiedad de una base: número de vectores linealmente independientes que la componen.' 
+      },
+      { 
+        topic: 'Matrices', 
+        text: 'Tamaño físico del arreglo expresado como renglones por columnas (m x n).' 
+      }
+    ],
+    tip: 'En espacios vectoriales es la cantidad de elementos en una base; en matrices es simplemente su orden.'
+  },
+  'Inconsistencia': {
+    label: 'Inconsistencia',
+    meanings: [
+      { 
+        topic: 'Sistemas de Ecuaciones', 
+        text: 'Condición de un sistema que carece de soluciones comunes.' 
+      }
+    ],
+    tip: 'Geométricamente, la inconsistencia se visualiza en rectas paralelas que nunca se cruzan (Ver Grossman, Fig 1.2).'
+  }
+};
